@@ -8,7 +8,6 @@ namespace StackAndQueues
 {
     internal class LinkedListQueue
     {
-
         Node head = null;
         internal void Enqueue(int data) //use of Enqueue for adding elements in Queue like we used Push in stack 
         {
@@ -44,5 +43,20 @@ namespace StackAndQueues
 
 
         }
+        internal void Dequeue(int data)//use of Dequeue to delete element in Queue like we used Pop in Stacks 
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            Node temp = this.head;
+            this.head = this.head.next;
+            if (this.head == null)
+            {
+                this.head = null;
+            }
+            Console.WriteLine("Item Delete is {0}", temp.data);
+        }
+
     }
 }
